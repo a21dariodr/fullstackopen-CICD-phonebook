@@ -7,7 +7,7 @@
     "dev": "nodemon index.js",
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build:frontend": "rm -rf dist && cd ./phonebook_frontend && npm run build && cp -r dist ../",
+    "build:frontend": "rm -rf dist && cd ./phonebook_frontend && npm install && npm run build && cp -r dist ../",
     "deploy": "fly deploy",
     "deploy:full": "npm run build:frontend && npm run deploy",
     "deploy:logs": "npm run deploy:full && npm run logs",
