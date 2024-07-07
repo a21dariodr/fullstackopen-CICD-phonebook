@@ -18,6 +18,7 @@ module.exports = {
       }
     }
   ],
+  'ignores': ["phonebook_frontend/*"],
   'parserOptions': {
     'ecmaVersion': 'latest'
   },
