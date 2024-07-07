@@ -1,0 +1,34 @@
+{
+  "name": "phonebook_backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:frontend": "rm -rf dist && cd ./phonebook_frontend && npm run build && cp -r dist ../",
+    "deploy": "fly deploy",
+    "deploy:full": "npm run build:frontend && npm run deploy",
+    "deploy:logs": "npm run deploy:full && npm run logs",
+    "lint": "eslint .",
+    "logs": "fly logs",
+    "debug": "node --inspect index.js",
+    "debug:dev": "nodemon --inspect index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.18.2",
+    "mongoose": "^8.2.0",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "@flydotio/dockerfile": "^0.5.2",
+    "@stylistic/eslint-plugin-js": "^1.6.3",
+    "eslint": "^8.57.0",
+    "nodemon": "^3.0.3"
+  }
+}

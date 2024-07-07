@@ -1,0 +1,46 @@
+GET https://phonebook-backend-dir.fly.dev/api/persons
+
+###
+
+GET https://phonebook-backend-dir.fly.dev/api/persons/3
+
+###
+
+GET https://phonebook-backend-dir.fly.dev/api/persons/5
+
+###
+
+GET https://phonebook-backend-dir.fly.dev/info
+
+###
+
+POST https://phonebook-backend-dir.fly.dev/api/persons
+content-type: application/json
+
+{
+    "name": "Pepe Pérez",
+    "number": "984826732"
+}
+
+###
+
+POST https://phonebook-backend-dir.fly.dev/api/persons
+content-type: application/json
+
+{
+    "name": "Pepe Pérez"
+}
+
+###
+
+POST https://phonebook-backend-dir.fly.dev/api/persons
+content-type: application/json
+
+{
+    "name": "Arto Hellas",
+    "number": "984826732"
+}
+
+###
+
+DELETE https://phonebook-backend-dir.fly.dev/api/persons/4

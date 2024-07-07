@@ -1,0 +1,50 @@
+GET http://localhost:3001/api/persons
+
+###
+
+GET http://localhost:3001/api/persons/3
+
+###
+
+GET http://localhost:3001/api/persons/5
+
+###
+
+GET http://localhost:3001/api/persons/65e0eac8f6950e55cede2a3b
+
+###
+
+GET http://localhost:3001/info
+
+###
+
+POST http://localhost:3001/api/persons
+content-type: application/json
+
+{
+    "name": "Pepe Pérez",
+    "number": "984826732"
+}
+
+###
+
+POST http://localhost:3001/api/persons
+content-type: application/json
+
+{
+    "name": "Pepe Pérez"
+}
+
+###
+
+POST http://localhost:3001/api/persons
+content-type: application/json
+
+{
+    "name": "Arto Hellas",
+    "number": "984826732"
+}
+
+###
+
+DELETE http://localhost:3001/api/persons/4
