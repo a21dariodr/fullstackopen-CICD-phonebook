@@ -8,11 +8,11 @@
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:frontend": "rm -rf dist && cd ./phonebook_frontend && npm install && npm run build && cp -r dist ../",
-    "deploy": "fly deploy",
+    "deploy": "flyctl deploy",
     "deploy:full": "npm run build:frontend && npm run deploy",
     "deploy:logs": "npm run deploy:full && npm run logs",
     "lint": "eslint .",
-    "logs": "fly logs",
+    "logs": "flyctl logs",
     "debug": "node --inspect index.js",
     "debug:dev": "nodemon --inspect index.js"
   },
