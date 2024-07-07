@@ -1,0 +1,30 @@
+name: Main pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  simple_deployment_pipeline:
+    timeout-minutes: 10
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install dependencies
+        run: npm install
+      - name: Install Playwright Browsers
+        run: npx playwright install --with-deps
+      - name: Lint
+        run: npm run lint
+      - name: Build
+        run: npm run build:frontend
+      - uses: superfly/flyctl-actions/setup-flyctl@master
+      - name: Deploy
+        if: ${{ github.event_name == 'push' && !contains(join(github.event.head_commit.message), '#skip') }}
+        run: npm run deploy
+        env:
+          FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
